@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  height: 100%;
+}
+
+#videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video full portrait */
+#myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Popup 18+ */
+#agePopup {
+  display: none;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.88);
+  padding: 25px;
+  width: 85%;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn .3s;
+}
+
+#agePopup h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+#agePopup button {
+  padding: 10px 25px;
+  margin: 6px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#batalBtn { background: #ff4444; color: #fff; }
+#lanjutBtn { background: #00c851; color: #fff; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+
+</head>
+<body>
+
+<div id="videoContainer">
+  <!-- VIDEO -->
+  <video id="myVideo" playsinline controls>
+    <source src="https://ik.imagekit.io/aemkj1xtl/c7708a1c8df73f8dbdcd0bcf18582c9f_720w.mp4" type="video/mp4">
+  </video>
+
+  <!-- POPUP -->
+  <div id="agePopup">
+    <h3>Apakah Anda 18+?</h3>
+    <button id="batalBtn">Batal</button>
+    <button id="lanjutBtn">Lanjut</button>
+  </div>
+</div>
+
+<script>
+let video = document.getElementById("myVideo");
+let popup = document.getElementById("agePopup");
+
+video.muted = false;
+video.volume = 1.0;
+
+document.addEventListener("click", function() {
+  video.play().catch(()=>{});
+  video.muted = false;
+  video.volume = 1;
+}, { once: true });
+
+setInterval(function() {
+  video.pause();
+  popup.style.display = "block";
+}, 3000);
+
+document.getElementById("batalBtn").onclick = function() {
+  popup.style.display = "none";
+  video.play();
+};
+
+document.getElementById("lanjutBtn").onclick = function() {
+  window.location.href = "https://www.effectivegatecpm.com/hp61zvh40?key=50e1dcc0c60f03789213492a442c476d";
+};
+</script>
+
+</body>
+</html>
